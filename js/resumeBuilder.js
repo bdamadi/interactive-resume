@@ -159,7 +159,27 @@ var work = {
             "dates": "​June 2008 - July 2010",
             "description": "Owned accountability for measuring, analyzing, and driving testing of complex communication systems."
         }
-    ]
+    ],
+    "display": function() {
+        
+        // Jobs list
+        for (var idx in this.jobs) {
+            var job = this.jobs[idx];
+            
+            // Construct a div element for a job
+            var workDiv = $(HTMLworkStart);
+            
+            // Show job's information
+            workDiv.append(
+                HTMLworkEmployer.replace("%data%", job.employer) +
+                HTMLworkTitle.replace("%data%", job.title));
+            workDiv.append(HTMLworkDates.replace("%data%", job.dates));
+            workDiv.append(HTMLworkLocation.replace("%data%", job.location));
+            workDiv.append(HTMLworkDescription.replace("%data%", job.description));
+                                                
+            $('#workExperience').append(workDiv);
+        }
+    }
 };
 
 var projects = {
@@ -176,7 +196,41 @@ var projects = {
             "description": "LasVegas.OSM.XLM it is a really nice dataset, and freely available for download.It is XML format.This dataset is human edited dataset.I had great opportunity to clean the data, wraggle the data and transform the shape of the data into a model (list of dictionary) and made it ready for Database! I have imported the data the MongoDB database and made queries such as number of unique users, number of shops, tourisms and hotesl in LasVegas.",
             "images": ["images/project1a.png", "images/project1b.png"]
         },
-    ]
+    ],
+    "display": function() {
+        // Projects list
+        for (var idx in this.projects) {
+            var project = this.projects[idx];
+            
+            // Construct a div element for a project
+            var projectDiv = $(HTMLprojectStart);
+            
+            // Show project's information
+            projectDiv.append(HTMLprojectTitle.replace("%data%", project.title));
+            projectDiv.append(HTMLprojectDates.replace("%data%", project.dates));
+            projectDiv.append(
+                HTMLprojectDescription.replace("%data%", project.description));
+            
+            // Images
+            for (var idx in project.images) {
+                projectDiv.append(
+                    HTMLprojectImage.replace("%data%", project.images[idx]));
+            }
+                                                
+            $('#projects').append(projectDiv);
+        }
+    }
 };
 
+
+
+// Display all objects for the resume
+function displayResume() {
+    bio.display();
+    education.display();
+    work.display();
+    projects.display();
+}
+
+//
 
