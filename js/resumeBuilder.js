@@ -93,6 +93,53 @@ var education = {
             "url": "https://www.udacity.com/course/ud651"
         },
     ],
+    "display": function() {
+        // Schools
+        for (var idx in this.schools) {
+            var school = this.schools[idx];
+            
+            // Construct a div element for a school
+            var schoolDiv = $(HTMLschoolStart);
+            
+            // Show school's information
+            schoolDiv.append(
+                HTMLschoolName.replace("%data%", school.name) +
+                HTMLschoolDegree.replace("%data%", school.degree));
+            schoolDiv.append(HTMLschoolDates.replace("%data%", 
+                school.dates));
+            schoolDiv.append(HTMLschoolLocation.replace("%data%", 
+                school.location));
+            
+            // List of majors
+            for (var idx in school.majors) {
+                schoolDiv.append(HTMLschoolMajor.replace("%data%", 
+                    school.majors[idx]));
+            }
+            
+            $('#education').append(schoolDiv);
+        }
+        
+        // Online Courses
+        $('#education').append(HTMLonlineClasses);
+        
+        for (var idx in this.onlineCourses) {
+            var course = this.onlineCourses[idx];
+            
+            // Construct a div element for a course
+            var courseDiv = $(HTMLschoolStart);
+            
+            // Show course's information
+            courseDiv.append(
+                HTMLonlineTitle.replace("%data%", course.title) +
+                HTMLonlineSchool.replace("%data%", course.school));
+            courseDiv.append(HTMLonlineDates.replace("%data%", 
+                course.date));
+            courseDiv.append(HTMLonlineURL.replace("%data%", 
+                course.url));
+                
+            $('#education').append(courseDiv);
+        }
+    }
 };
 
 
@@ -132,19 +179,4 @@ var projects = {
     ]
 };
 
-if (bio.skills.length > 0) {
 
-	$("#header").append(HTMLskillsStart);
-
-	var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkills);
-	formattedSkills = HTMLskills.replace("%data%",bio.skills[1]);
-	$("#skills").append(formattedSkills);
-	formattedSkills = HTMLskills.replace("%data%",bio.skills[2]);
-	$("#skills").append(formattedSkills);
-	formattedSkills = HTMLskills.replace("%data%",bio.skills[3]);
-	$("#skills").append(formattedSkills);
-
-
-
-}
