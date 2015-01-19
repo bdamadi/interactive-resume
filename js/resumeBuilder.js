@@ -68,7 +68,7 @@ var education = {
             "name": "University of Maryland, Baltimore County",
             "location": "Baltimore, MD",
             "degree": "BS",
-            "majors": "Computer Engineering"
+            "majors": "Computer Engineering",
             "dates": 2006,
             "url": "http://www.umbc.edu"
         }
@@ -93,3 +93,42 @@ var education = {
             "url": "https://www.udacity.com/course/ud651"
         },
     ],
+};
+
+
+var work = {
+    "jobs": [ // Array of objects
+        {
+            "employer": "Cost Analysis and Estimating Directorate",
+            "title": "Industrial Engineer",
+            "location": "Washington Metropolitan Area, DC",
+            "dates": "​July 2010 - Present",
+            "description": "Drives the improvement of systematic processes while utilizing statistical analysis, design, planning, quality control, operations management, computer simulations, and problem solving techniques."
+        },
+        {
+            "employer": "GTA",
+            "title": "Information Technology Consultant",
+            "location": "Reston, VA",
+            "dates": "​June 2008 - July 2010",
+            "description": "Owned accountability for measuring, analyzing, and driving testing of complex communication systems."
+        }
+    ]
+};
+
+var projects = {
+    "projects": [ // array of objects
+        {
+            "title": "Grapminder - Adults with HIV - Data Analysis",
+            "dates": "June 2014 - July 2014",
+            "description": "Investigated the UNAIDS (United Nations Programme on HIV/AIDS) data from 1990 onwards, and estimated the HIV prevelance percent in countries in Africa with comparision with all other countries , used years, country and value to plot HIV Prevelance % by US and the world ",
+            "images": ["images/project2a.png", "images/project2b.png"]
+        },
+        {
+            "title": "OpenStreetMap Case_Study",
+            "dates": "May 2014 - June 2014",
+            "description": "LasVegas.OSM.XLM it is a really nice dataset, and freely available for download.It is XML format.This dataset is human edited dataset.I had great opportunity to clean the data, wraggle the data and transform the shape of the data into a model (list of dictionary) and made it ready for Database! I have imported the data the MongoDB database and made queries such as number of unique users, number of shops, tourisms and hotesl in LasVegas.",
+            "images": ["images/project1a.png", "images/project1b.png"]
+        },
+    ]
+};
+
