@@ -46,6 +46,50 @@ var bio = {
     }
 };
 
-bio["city"] = "Washington metropolitan area";
-
-$("#main").append(bio["city"]);
+var education = {
+    "schools": [ // Array of objects
+        {
+            "name": "Georgia Tech",
+            "location": "Atlanta, GA",
+            "degree": "MS",
+            "majors": ["Software Engineering"],
+            "dates": "2015 (in progress)",
+            "url": "http://www.gatech.edu/"
+        },
+        {
+            "name": "George Washington University",
+            "location": "Washington, DC",
+            "degree": "MS",
+            "majors": [ "Engineering Management", "Concentration in Economics", "Finance, & Cost Engineering" ],
+            "dates": "2009",
+            "url": "http://www.gwu.edu/"
+        },
+        {
+            "name": "University of Maryland, Baltimore County",
+            "location": "Baltimore, MD",
+            "degree": "BS",
+            "majors": "Computer Engineering"
+            "dates": 2006,
+            "url": "http://www.umbc.edu"
+        }
+    ],
+    "onlineCourses": [ // Array of objects
+        {
+            "title": "JavaScript Basics",
+            "school": "Udacity",
+            "date": 2015,
+            "url": "https://www.udacity.com/course/ud804"
+        },
+        {
+            "title": "Web Development",
+            "school": "Udacity",
+            "date": 2015,
+            "url": "https://www.udacity.com/course/cs253"
+        },
+        {
+            "title": "Data Analysis with R",
+            "school": "Udacity",
+            "date": 2015,
+            "url": "https://www.udacity.com/course/ud651"
+        },
+    ],
