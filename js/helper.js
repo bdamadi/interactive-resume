@@ -86,6 +86,8 @@ function logClicks(x,y) {
 
 $(document).click(function(loc) {
   // your code goes here!
+  // print the mouse's location to the console
+  console.log(loc.pageX, loc.pageY);
 });
 
 
@@ -149,8 +151,8 @@ function initializeMap() {
   function createMapMarker(placeData) {
 
     // The next lines save location data from the search result object to local variables
-    var lat = placeData.geometry.location.k;  // latitude from the place service
-    var lon = placeData.geometry.location.D;  // longitude from the place service
+    var lat = placeData.geometry.location.lat();  // latitude from the place service
+    var lon = placeData.geometry.location.lng();  // longitude from the place service
     var name = placeData.formatted_address;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
 
@@ -171,6 +173,8 @@ function initializeMap() {
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
+      // Code added for interactive google map - show infoWindow
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
