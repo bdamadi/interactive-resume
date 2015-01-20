@@ -213,3 +213,24 @@ span {
     display: block;
   }
 }
+
+
+/* Customize styles */
+.collapsible h2 {
+  background-image: url('../images/icon-arrow-down-b-20.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;  
+  cursor: pointer;
+}
+
+h2.collapsed {
+  background-image: url('../images/icon-arrow-up-b-20.png');
+}
+
+.gray h2 {
+  background-color: #DDDDDD;
+}
+
+.minimal-height {
+  height: 50px !important;
+}

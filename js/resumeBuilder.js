@@ -186,13 +186,13 @@ var projects = {
     "projects": [ // array of objects
         {
             "title": "Grapminder - Adults with HIV - Data Analysis",
-            "dates": "June 2014 - July 2014",
+            "dates": "June 2014 - Feb 2015",
             "description": "Investigated the UNAIDS (United Nations Programme on HIV/AIDS) data from 1990 onwards, and estimated the HIV prevelance percent in countries in Africa with comparision with all other countries , used years, country and value to plot HIV Prevelance % by US and the world ",
             "images": ["images/project2a.png", "images/project2b.png"]
         },
         {
             "title": "OpenStreetMap Case_Study",
-            "dates": "May 2014 - June 2014",
+            "dates": "May 2014 - Jan 2015",
             "description": "LasVegas.OSM.XLM it is a really nice dataset, and freely available for download.It is XML format.This dataset is human edited dataset.I had great opportunity to clean the data, wraggle the data and transform the shape of the data into a model (list of dictionary) and made it ready for Database! I have imported the data the MongoDB database and made queries such as number of unique users, number of shops, tourisms and hotesl in LasVegas.",
             "images": ["images/project1a.png", "images/project1b.png"]
         },
@@ -221,7 +221,6 @@ var projects = {
         }
     }
 };
-
 // Display all objects for the resume
 function displayResume() {
     bio.display();
@@ -230,10 +229,31 @@ function displayResume() {
     projects.display();
 }
 
-
-
-
 // Call once to populate all the resume
 displayResume();
+
+// Add more interactivity
+$(document).ready(function() {
+    // click on a header of a section to collapse/expand its details
+    $('div.collapsible > h2').click(function() {
+        $(this).toggleClass("collapsed"); // change the header itself
+        
+        // The container div
+        var parentDiv = $(this).parent();
+        
+        // hide all elements below the header
+        $(this).nextAll().toggle(400, function() {
+            // Set the minimal height for hiding the content
+            parentDiv.toggleClass("minimal-height");
+        });
+    });
+});
+
+
+
+
+
+
+
 
 
