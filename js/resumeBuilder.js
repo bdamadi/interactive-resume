@@ -60,7 +60,7 @@ var education = {
             "name": "George Washington University",
             "location": "Washington, DC",
             "degree": "MS",
-            "majors": [ "Engineering Management", "Concentration in Economics", "Finance, & Cost Engineering" ],
+            "majors": [ "Engineering Management; Concentration in Economics and Finance, & Cost Engineering" ],
             "dates": "2009",
             "url": "http://www.gwu.edu/"
         },
@@ -68,7 +68,7 @@ var education = {
             "name": "University of Maryland, Baltimore County",
             "location": "Baltimore, MD",
             "degree": "BS",
-            "majors": "Computer Engineering",
+            "majors": ["Computer Engineering"],
             "dates": 2006,
             "url": "http://www.umbc.edu"
         }
@@ -222,8 +222,6 @@ var projects = {
     }
 };
 
-
-
 // Display all objects for the resume
 function displayResume() {
     bio.display();
@@ -232,5 +230,10 @@ function displayResume() {
     projects.display();
 }
 
-//
+
+
+
+// Call once to populate all the resume
+displayResume();
+
 
